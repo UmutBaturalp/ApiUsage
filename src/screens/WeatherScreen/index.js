@@ -41,19 +41,31 @@ const WeatherScreen = props => {
     <SafeAreaView>
       <View style={styles.container}>
         <View style={styles.body}>
-          <View style={styles.changeDateView}>
-            <TouchableOpacity
-              disabled={dayCounter === 0 ? true : false}
-              style={[
-                styles.changeDateButton,
-                {opacity: dayCounter === 0 ? 0.5 : 1},
-              ]}
-              onPress={backDay}>
-              <Text style={styles.changeDateText}> Geri </Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.changeDateButton} onPress={nextDay}>
-              <Text style={styles.changeDateText}>Ileri</Text>
-            </TouchableOpacity>
+          <View style={styles.dateView}>
+            <View style={styles.dateDayView}>
+              <Text style={styles.dateText}>
+                {weatherData[dayCounter]?.date}
+              </Text>
+              <Text style={styles.dateText}>
+                {weatherData[dayCounter]?.day}
+              </Text>
+            </View>
+            <View style={styles.changeDateView}>
+              <TouchableOpacity
+                disabled={dayCounter === 0 ? true : false}
+                style={[
+                  styles.changeDateButton,
+                  {opacity: dayCounter === 0 ? 0.5 : 1},
+                ]}
+                onPress={backDay}>
+                <Text style={styles.changeDateText}> Geri </Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={styles.changeDateButton}
+                onPress={nextDay}>
+                <Text style={styles.changeDateText}>Ileri</Text>
+              </TouchableOpacity>
+            </View>
           </View>
           <Image
             style={styles.image}

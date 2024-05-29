@@ -12,7 +12,7 @@ const Wheather = props => {
   return (
     <SafeAreaView>
       <View style={styles.container}>
-        <Text>WHEATHER</Text>
+        <Text>SEARCH SCREEN</Text>
         <TouchableOpacity onPress={() => navigation.navigate('Home')}>
           <Text style={{color: 'blue', marginTop: 20}}>Go to Home</Text>
         </TouchableOpacity>

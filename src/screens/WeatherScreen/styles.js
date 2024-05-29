@@ -112,4 +112,18 @@ export default styles = StyleSheet.create({
     paddingVertical: windowHeight * 0.005,
     textTransform: 'capitalize',
   },
+
+  dateView: {
+    alignItems: 'center',
+  },
+  dateText: {
+    fontSize: windowWidth * 0.04,
+    color: 'black',
+    fontWeight: '500',
+  },
+  dateDayView: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    columnGap: windowWidth * 0.02,
+  },
 });

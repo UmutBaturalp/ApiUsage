@@ -1,5 +1,4 @@
 import {
-  StyleSheet,
   Text,
   View,
   SafeAreaView,
@@ -12,7 +11,6 @@ import styles from './styles';
 import {SelectList} from 'react-native-dropdown-select-list';
 import data from '../../assets/Contans/data';
 import {getWeatherApi, getPharmacyApi, getNamazApi} from '../../service';
-import {Header} from '../../components';
 const windowWidth = Dimensions.get('window').width;
 const Home = props => {
   const {navigation} = props;
@@ -24,15 +22,19 @@ const Home = props => {
   const urlSendNamaz = `?data.city=${selected}`;
 
   // eczane döngüsü
-  /* 
   const [counterPharmacy, setcounterPharmacy] = useState(0);
-  useEffect(() => {
+  /* useEffect(() => {
     setTimeout(() => {
       setcounterPharmacy(counterPharmacy + 1) % pharmacyData.length;
     }, 2000);
-  }, [counterPharmacy]); */
+  }, [counterPharmacy]);
 
+  */
   // eczane döngüsü biitş
+
+  const [weatherData, setweatherData] = useState([]);
+  const [pharmacyData, setpharmacyData] = useState([]);
+  const [namazData, setnamazData] = useState([]);
 
   const metot = () => {
     getWeatherApi(urlSend).then(res => {
@@ -52,12 +54,6 @@ const Home = props => {
     });
   };
 
-  const [weatherData, setweatherData] = useState([]);
-  const [pharmacyData, setpharmacyData] = useState([]);
-  const [namazData, setnamazData] = useState([]);
-  console.log('weatherData : ', weatherData);
-  console.log('pharmacyData : ', pharmacyData);
-  console.log('namazData : ', namazData);
   return (
     <SafeAreaView>
       <View style={styles.container}>
@@ -88,6 +84,10 @@ const Home = props => {
               save="value"
             />
           </View>
+
+          {
+            // **** WEATHER *****
+          }
           <View style={styles.card}>
             <View style={styles.cardLeft}>
               <Image
@@ -119,18 +119,18 @@ const Home = props => {
           <View style={styles.cardPharmacy}>
             <View style={styles.cardPharmacyTop}>
               <Text style={styles.cardPharmacyText}>
-                {pharmacyData[0]?.name} Eczanesi
+                {pharmacyData[counterPharmacy]?.name} Eczanesi
               </Text>
               <Text style={styles.cardPharmacyText}>
-                {pharmacyData[0]?.dist}
+                {pharmacyData[counterPharmacy]?.dist}
               </Text>
             </View>
             <Text style={styles.cardPharmacyText}>
-              {pharmacyData[0]?.address}
+              {pharmacyData[counterPharmacy]?.address}
             </Text>
             <View style={styles.cardPharmacyBottom}>
               <Text style={styles.cardPharmacyText}>
-                {pharmacyData[0]?.phone}
+                {pharmacyData[counterPharmacy]?.phone}
               </Text>
             </View>
           </View>

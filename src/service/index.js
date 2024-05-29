@@ -1,3 +1,5 @@
-import {getWeatherApi, getPharmacyApi, getNamazApi} from './place';
+import {getWeatherApi} from './weather';
+import {getPharmacyApi} from './pharmacy';
+import {getNamazApi} from './prayertimes';
 
 export {getWeatherApi, getPharmacyApi, getNamazApi};

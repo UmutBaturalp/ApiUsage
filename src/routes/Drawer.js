@@ -10,6 +10,7 @@ import {
   PharmacyScreen,
   NamazScreen,
 } from '../screens';
+import {RouterNames} from '../config';
 const Drawer = createDrawerNavigator();
 
 const MyDrawer = () => {
@@ -25,10 +26,16 @@ const MyDrawer = () => {
           fontWeight: '400',
         },
       }}>
-      <Drawer.Screen name="Home" component={TabNavigator} />
-      <Drawer.Screen name="NamazScreen" component={NamazScreen} />
-      <Drawer.Screen name="PharmacyScreen" component={PharmacyScreen} />
-      <Drawer.Screen name="WeatherScreen" component={WeatherScreen} />
+      <Drawer.Screen name={RouterNames.Home} component={TabNavigator} />
+      <Drawer.Screen name={RouterNames.NamazScreen} component={NamazScreen} />
+      <Drawer.Screen
+        name={RouterNames.PharmacyScreen}
+        component={PharmacyScreen}
+      />
+      <Drawer.Screen
+        name={RouterNames.WeatherScreen}
+        component={WeatherScreen}
+      />
     </Drawer.Navigator>
   );
 };

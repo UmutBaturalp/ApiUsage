@@ -3,7 +3,7 @@ import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {Home, Wheather} from '../screens';
 import {Icons} from '../assets';
-
+import {RouterNames} from '../config';
 const Tab = createBottomTabNavigator();
 
 const TabNavigator = () => {
@@ -16,7 +16,7 @@ const TabNavigator = () => {
       }}
       initialRouteName="Home">
       <Tab.Screen
-        name="Home"
+        name={RouterNames.Home}
         component={Home}
         options={{
           tabBarIcon: ({size, focused, color}) => {
@@ -31,7 +31,7 @@ const TabNavigator = () => {
         }}
       />
       <Tab.Screen
-        name="Wheather"
+        name={RouterNames.Wheather}
         component={Wheather}
         options={{
           tabBarIcon: ({size, focused, color}) => {
