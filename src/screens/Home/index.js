@@ -23,13 +23,13 @@ const Home = props => {
 
   // eczane döngüsü
   const [counterPharmacy, setcounterPharmacy] = useState(0);
-  /* useEffect(() => {
+  useEffect(() => {
     setTimeout(() => {
       setcounterPharmacy(counterPharmacy + 1) % pharmacyData.length;
     }, 2000);
   }, [counterPharmacy]);
 
-  */
+  
   // eczane döngüsü biitş
 
   const [weatherData, setweatherData] = useState([]);
